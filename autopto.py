@@ -5,11 +5,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+import getpass
 
 #initialise panopto credentials
 
 panopto_user = input("enter Panopto User: ")
-panopto_password = input("enter Panopto Password: ")
+panopto_password = getpass.getpass("enter Panopto Password (will be hidden): ")
+print(panopto_password)
 
 #initialise links
 spotify_url = 'https://open.spotify.com/browse/featured#_=_'
@@ -21,7 +23,7 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
 
 #initialise browser credentials for panopto
-p_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\auto-panopto\\chromedriver.exe") #change path to chromedriver based on your own machine 
+p_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\auto-panopto\\chromedriver.exe") #change path to chromedriver based on your own machine
 p_browser.get((panopto_url))
 
 #auto log into panopto
