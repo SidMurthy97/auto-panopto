@@ -9,7 +9,7 @@ import time
 #initialise panopto credentials
 
 panopto_user = input("enter Panopto User: ")
-panopto_password = input("enter Panopto Password")
+panopto_password = input("enter Panopto Password: ")
 
 #initialise links
 spotify_url = 'https://open.spotify.com/browse/featured#_=_'
@@ -42,7 +42,7 @@ s_browser.get((spotify_url))
 play_count = 0
 pause_count = 0
 
-continue_condition = input("Log in complete? ")#condition to manually input spotify log in
+continue_condition = input("Log into spotify, then enter (1):  ")#condition to manually input spotify log in
 #run loop to check is panopto is playing
 if continue_condition:
     while(1): #loop to check if panopto is playing
