@@ -21,7 +21,7 @@ options.add_argument('--ignore-certificate-errors')
 options.add_argument('--ignore-ssl-errors')
 
 #initialise browser credentials for panopto
-p_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\automate_panopto\\chromedriver.exe")
+p_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\auto-panopto\\chromedriver.exe") #change path to chromedriver based on your own machine 
 p_browser.get((panopto_url))
 
 #auto log into panopto
@@ -35,9 +35,8 @@ log_in = p_browser.find_element_by_id('submitButton')
 log_in.click()
 
 #same for spotify
-s_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\automate_panopto\\chromedriver.exe")
+s_browser = webdriver.Chrome("C:\\Users\\murth\\OneDrive\\Documents\\Python Scripts\\auto-panopto\\chromedriver.exe")
 s_browser.get((spotify_url))
-
 #set counters
 play_count = 0
 pause_count = 0
@@ -45,6 +44,7 @@ pause_count = 0
 continue_condition = input("Log into spotify, then enter (1):  ")#condition to manually input spotify log in
 #run loop to check is panopto is playing
 if continue_condition:
+    print("wait for spotify to start playing before starting the panopto")
     while(1): #loop to check if panopto is playing
         p_html = soup(p_browser.page_source,"html.parser") #get relevant html code
         play_condition = p_html.find("div",{"id":"playButton"})
