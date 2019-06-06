@@ -11,7 +11,7 @@ import getpass
 
 panopto_user = input("enter Panopto User: ")
 panopto_password = getpass.getpass("enter Panopto Password (will be hidden): ")
-print(panopto_password)
+
 
 #initialise links
 spotify_url = 'https://open.spotify.com/browse/featured#_=_'
