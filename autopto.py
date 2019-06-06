@@ -8,7 +8,7 @@ import time
 
 #initialise panopto credentials
 
-panopto_user = inuput("enter Panopto User: ")
+panopto_user = input("enter Panopto User: ")
 panopto_password = input("enter Panopto Password")
 
 #initialise links
